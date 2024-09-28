@@ -3,6 +3,7 @@ import { Button } from './ui/button'
 import { DialogTrigger } from './ui/dialog'
 import illustration from '../assets/ilustration.svg'
 import logo from '../../public/favicon.svg'
+import React from 'react'
 export function EmptyGoals() {
   return (
     <div className="h-screen flex flex-col items-center justify-center gap-8">

@@ -1,7 +1,8 @@
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import { CheckCircle2, Circle } from 'lucide-react'
 
-export function RadioGroup(props: RadioGroupPrimitive.RadioGroupProps) {
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export function RadioGroup(props: any) {
   return (
     <RadioGroupPrimitive.RadioGroup
       {...props}
@@ -10,7 +11,7 @@ export function RadioGroup(props: RadioGroupPrimitive.RadioGroupProps) {
   )
 }
 
-export function RadioGroupItem(props: RadioGroupPrimitive.RadioGroupItemProps) {
+export function RadioGroupItem(props: any) {
   return (
     <RadioGroupPrimitive.RadioGroupItem
       {...props}

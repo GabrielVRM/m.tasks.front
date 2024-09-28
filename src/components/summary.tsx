@@ -9,6 +9,7 @@ import { useQuery } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import ptBR from 'dayjs/locale/pt-BR'
 import { PendingGoals } from './pending-goals'
+import React from 'react'
 
 dayjs.locale(ptBR)
 export function Summary() {

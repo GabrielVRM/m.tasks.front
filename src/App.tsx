@@ -4,6 +4,7 @@ import { EmptyGoals } from './components/empty-goals'
 import { Summary } from './components/summary'
 import { useQuery } from '@tanstack/react-query'
 import { getSummary } from './http/get-summary'
+import React from 'react'
 
 export function App() {
   const { data } = useQuery({

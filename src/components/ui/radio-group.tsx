@@ -11,6 +11,7 @@ export function RadioGroup(props: any) {
   )
 }
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export function RadioGroupItem(props: any) {
   return (
     <RadioGroupPrimitive.RadioGroupItem

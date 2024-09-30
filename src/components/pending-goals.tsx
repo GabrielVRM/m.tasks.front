@@ -3,6 +3,7 @@ import { OutlineButton } from './ui/outline-button'
 import { getPendingGoals } from '../http/get-pending-goals'
 import { useQueryClient, useQuery } from '@tanstack/react-query'
 import { createGoalsCompletions } from '../http/create-goal-completions'
+import React from 'react'
 
 export function PendingGoals() {
   const { data } = useQuery({

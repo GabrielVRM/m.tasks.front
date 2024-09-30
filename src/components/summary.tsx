@@ -7,6 +7,8 @@ import { Separator } from './ui/separator'
 import { getSummary } from '../http/get-summary'
 import { useQuery } from '@tanstack/react-query'
 import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
+dayjs.extend(customParseFormat)
 import ptBR from 'dayjs/locale/pt-BR'
 import { PendingGoals } from './pending-goals'
 import React from 'react'

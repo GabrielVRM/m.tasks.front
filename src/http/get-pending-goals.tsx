@@ -6,7 +6,7 @@ type PendingGoalsType = {
 }[]
 
 export async function getPendingGoals(): Promise<PendingGoalsType> {
-  const response = await fetch('http://localhost:3333/pending-goals')
+  const response = await fetch('https://m-tasks-5ba7.onrender.com/pending-goals')
   const data = await response.json()
   return data
 }

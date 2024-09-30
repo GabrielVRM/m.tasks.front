@@ -6,14 +6,12 @@ import { Progress, ProgressIndicator } from './ui/progress-bar'
 import { Separator } from './ui/separator'
 import { getSummary } from '../http/get-summary'
 import { useQuery } from '@tanstack/react-query'
-import dayjs from 'dayjs'
-import customParseFormat from 'dayjs/plugin/customParseFormat'
-dayjs.extend(customParseFormat)
-import ptBR from 'dayjs/locale/pt-BR'
+import dayjs from 'dayjs/esm/index.js'
+import 'dayjs/esm/locale/pt-br.js' /
 import { PendingGoals } from './pending-goals'
 import React from 'react'
 
-dayjs.locale(ptBR)
+dayjs.locale('pt-br');
 export function Summary() {
   const { data } = useQuery({
     queryKey: ['summary'],

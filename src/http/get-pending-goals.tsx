@@ -4,9 +4,10 @@ type PendingGoalsType = {
   desiredWeeklyFrequency: number
   completeCount: number
 }[]
+const apiUrl = import.meta.env.VITE_API_URL_DEV
 
 export async function getPendingGoals(): Promise<PendingGoalsType> {
-  const response = await fetch('https://m-tasks-5ba7.onrender.com/pending-goals')
+  const response = await fetch(`${apiUrl}/pending-goals`)
   const data = await response.json()
   return data
 }

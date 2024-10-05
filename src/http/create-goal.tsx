@@ -2,12 +2,13 @@ interface CreateGoalsType {
   title: string
   desiredWeeklyFrequency: number
 }
+const apiUrl = import.meta.env.VITE_API_URL_DEV
 
 export async function createGoals({
   title,
   desiredWeeklyFrequency,
 }: CreateGoalsType) {
-  await fetch('https://m-tasks-5ba7.onrender.com/goals', {
+  await fetch(`${apiUrl}/goals`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',

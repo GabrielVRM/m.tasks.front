@@ -10,9 +10,10 @@ type SummaryType = {
     }[]
   >
 }
+const apiUrl = import.meta.env.VITE_API_URL_DEV
 
 export async function getSummary(): Promise<SummaryType> {
-  const response = await fetch('https://m-tasks-5ba7.onrender.com/summary')
+  const response = await fetch(`${apiUrl}/summary`)
   const data = await response.json()
 
   return data.summary

@@ -1,15 +1,15 @@
-import { CheckCircle2, Plus } from 'lucide-react'
+import { CheckCircle2, Plus, Trash2 } from 'lucide-react'
 import { Button } from './ui/button'
 import { DialogTrigger } from './ui/dialog'
 import { MTaskIcon } from './m-tasks-icon'
 import { Progress, ProgressIndicator } from './ui/progress-bar'
 import { Separator } from './ui/separator'
 import { getSummary } from '../http/get-summary'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs/esm/index.js'
 import 'dayjs/esm/locale/pt-br.js'
 import { PendingGoals } from './pending-goals'
-import React from 'react'
+import { deleteGoals } from '../http/delete-goals-completions'
 
 dayjs.locale('pt-br')
 export function Summary() {
@@ -23,6 +23,13 @@ export function Summary() {
     return null
   }
 
+  const queryClient = useQueryClient()
+
+  async function trash(id: string) {
+    await deleteGoals(id)
+    queryClient.invalidateQueries({ queryKey: ['summary'] })
+    queryClient.invalidateQueries({ queryKey: ['pending-goals'] })
+  }
   const firstDayOfWeek = dayjs().startOf('week').format('DD MMMM')
   const lastDayOfWeek = dayjs().endOf('week').format('DD MMMM')
 
@@ -86,6 +93,13 @@ export function Summary() {
                         <span className="text-zinc-100">{goal.title}</span> ás{' '}
                         <span className="text-zinc-100">{time}</span>
                       </span>
+                      <Button
+                        size="sm"
+                        variant=""
+                        onClick={() => trash(goal.id)}
+                      >
+                        <Trash2 size={15} color="#f46775" />
+                      </Button>
                     </li>
                   )
                 })}

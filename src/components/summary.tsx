@@ -25,7 +25,8 @@ export function Summary() {
 
   const queryClient = useQueryClient()
 
-  async function trash(id: string) {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  async function trash(id: any) {
     await deleteGoals(id)
     queryClient.invalidateQueries({ queryKey: ['summary'] })
     queryClient.invalidateQueries({ queryKey: ['pending-goals'] })

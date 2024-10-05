@@ -95,7 +95,7 @@ export function Summary() {
                       </span>
                       <Button
                         size="sm"
-                        variant=""
+                        variant="primary"
                         onClick={() => trash(goal.id)}
                       >
                         <Trash2 size={15} color="#f46775" />

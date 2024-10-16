@@ -11,7 +11,10 @@ import { useQuery } from '@tanstack/react-query'
 import { getSummary } from '../http/get-summary'
 import Swal from 'sweetalert2'
 
-export function SingIn({ setIsAuthenticated }) {
+interface SignInProps {
+  setIsAuthenticated: (isAuthenticated: boolean) => void
+}
+export function SingIn({ setIsAuthenticated }: SignInProps) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   // const navigate = useNavigate()

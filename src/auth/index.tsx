@@ -12,7 +12,7 @@ import { getSummary } from '../http/get-summary'
 import Swal from 'sweetalert2'
 
 interface SignInProps {
-  setIsAuthenticated: boolean
+  setIsAuthenticated: undefined
 }
 export function SingIn({ setIsAuthenticated }: SignInProps) {
   const [email, setEmail] = useState('')

@@ -7,7 +7,9 @@ type PendingGoalsType = {
 const apiUrl = import.meta.env.VITE_API_URL_DEV
 
 export async function getPendingGoals(): Promise<PendingGoalsType> {
-  const response = await fetch(`${apiUrl}/pending-goals`)
+  const token = localStorage.getItem('token')
+
+  const response = await fetch(`${apiUrl}/pending-goals/${token}`)
   const data = await response.json()
   return data
 }

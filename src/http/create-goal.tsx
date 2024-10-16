@@ -8,7 +8,9 @@ export async function createGoals({
   title,
   desiredWeeklyFrequency,
 }: CreateGoalsType) {
-  await fetch(`${apiUrl}/goals`, {
+  const token = localStorage.getItem('token')
+
+  await fetch(`${apiUrl}/goals/${token}`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',

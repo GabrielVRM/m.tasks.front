@@ -13,7 +13,9 @@ type SummaryType = {
 const apiUrl = import.meta.env.VITE_API_URL_DEV
 
 export async function getSummary(): Promise<SummaryType> {
-  const response = await fetch(`${apiUrl}/summary`)
+  const token = localStorage.getItem('token')
+  console.log(token)
+  const response = await fetch(`${apiUrl}/summary/${token}`)
   const data = await response.json()
 
   return data.summary

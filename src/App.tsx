@@ -9,7 +9,7 @@ import * as Auth from './auth'
 import { useState } from 'react'
 
 export function App() {
-  const [isAuthenticated, setIsAuthenticated]: Boolean = useState()
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>()
   console.log(` hello: ${isAuthenticated}`)
   const { data } = useQuery({
     queryKey: ['summary'],
